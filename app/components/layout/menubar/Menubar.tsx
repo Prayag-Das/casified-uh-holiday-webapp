@@ -22,7 +22,7 @@ const Menubar = () => {
                 <Navbar.Collapse>
                     <Nav className="ms-auto">
                         <Link href="/" passHref legacyBehavior><Nav.Link>Home</Nav.Link></Link>
-                        {casUserContext.currentUser.roles.includes(Role.USER) 
+                        {casUserContext.currentUser.roles.includes(Role.USER)
                             && <Link href="/contact" passHref legacyBehavior><Nav.Link>Contact</Nav.Link></Link>}
                         <Link href="/faq" passHref legacyBehavior><Nav.Link>About</Nav.Link></Link>
                         <CampusDropdown />
