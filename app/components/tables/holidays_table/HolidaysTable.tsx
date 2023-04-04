@@ -14,19 +14,20 @@ import SortArrow from '@/components/tables/holidays_table/table_element/SortArro
 import Pagination from '@/components/tables/holidays_table/table_element/Pagination';
 import Filter from '@/components/tables/holidays_table/table_element/Filter';
 import '../../../styles/Home.module.css';
-
 interface HolidaysTableProps {
     data: Holiday[];
 }
 
 
 const HolidaysTable = ({ data }: HolidaysTableProps) => {
-    const [filtering, setFiltering] = useState('');
+
+    const [filtering, setFiltering] = useState<string>("");
     const [firstColumnSorting, setFirstColumnSorting] = useState<'asc' | 'desc'>('asc');
-    const [sorting, setSorting] = useState([{ id: 'description', desc: false }]);
+    const [sorting, setSorting] = useState([{ id: 'description', desc: firstColumnSorting === 'desc' }]);
+    const columns = HolidaysTableHeaders;
 
     const tableInstance = useReactTable({
-        columns: HolidaysTableHeaders,
+        columns,
         data: data || [],
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),

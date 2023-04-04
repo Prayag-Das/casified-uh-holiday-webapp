@@ -44,6 +44,7 @@ describe('HolidaysTable', () => {
         fireEvent.click(headerToSort3);
 
         // Add assertions to check if the table is correctly sorted
+<<<<<<< HEAD
         fireEvent.click(headerToSort);
         const christmasRows = screen.queryAllByText('Christmas');
         expect(christmasRows.length).toBeGreaterThan(0);
@@ -64,5 +65,8 @@ describe('HolidaysTable', () => {
         fireEvent.click(headerToSort3);
         laborDayRows = screen.queryAllByText('Labor Day');
         expect(laborDayRows.length).toBeGreaterThan(0);
+=======
+        // For example, you can assert the order of specific rows based on sorting
+>>>>>>> 535d541 (iCreated HolidaysTable component using tanstack-table v8)
     });
 });
