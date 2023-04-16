@@ -1,14 +1,17 @@
 export const HolidaysTableHeaders = [
     {
         Header: 'Holiday',
-        accessor: 'holiday'
+        accessor: 'holiday',
+        columns: 3
     },
     {
         Header: 'Observed',
-        accessor: 'observed'
+        accessor: 'observed',
+        columns: 3
     },
     {
         Header: 'Official',
-        accessor: 'official'
+        accessor: 'official',
+        columns: 3
     }
 ]
