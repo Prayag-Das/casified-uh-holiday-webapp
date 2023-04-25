@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import Layout from '@/components/layout/Layout';
+import HolidaysTable from "@/components/tables/holidays_table/HolidaysTable";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
