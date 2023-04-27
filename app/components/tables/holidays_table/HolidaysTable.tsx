@@ -1,9 +1,11 @@
-import HolidaysTableData from "@/components/tables/holidays_table/table_element/HolidaysTableData";
+import holidaysData from "../../../public/data/holidaysData.json";
 import * as React from "react";
-
-//These contents will be added to the HolidaysTableData in the
+//import {useTable} from "react-table";
 
 const HolidaysTable = () => {
+
+
+    /* These contents will be added to the HolidaysTableData in the future
     const [data, setData] = React.useState([])
 
     React.useEffect(() => {
@@ -20,6 +22,8 @@ const HolidaysTable = () => {
             </pre>
         </div>
     )
+    
+   */
 }
 
 export default HolidaysTable;
