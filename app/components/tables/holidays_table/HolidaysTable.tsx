@@ -1,6 +1,6 @@
 import holidaysData from "../../../public/data/holidaysData.json";
 import * as React from "react";
-//import {useTable} from "react-table";
+import {useTable} from "react-table";
 
 const HolidaysTable = () => {
 
