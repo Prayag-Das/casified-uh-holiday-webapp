@@ -1,14 +1,5 @@
 export const COLUMNS = [
-    {
-        Header: 'Holiday',
-        accessor: 'description'
-    },
-    {
-        Header: 'Observed',
-        accessor: 'observedDateFull'
-    },
-    {
-        Header: 'Official',
-        accessor: 'officialDateFull'
-    }
-]
+    { header: 'Holidays', accessor: 'description' },
+    { header: 'Observed', accessor: 'observedDateFull' },
+    { header: 'Official', accessor: 'officialDateFull' },
+];

@@ -1,44 +1,37 @@
-import React, {useMemo} from "react";
-import { useTable } from "react-table";
-import holidaysData from "../../../public/data/holidaysData.json";
-import { COLUMNS } from "@/components/tables/holidays_table/table_element/HolidaysTableColumns";
-import isTableElement from "@popperjs/core/lib/dom-utils/isTableElement";
-import "./table_element/table.css"
+import React from 'react';
+//import './table_element/table.css'
 
-export const BasicTable = () => {
+interface Column {
+  header: string;
+  accessor: string;
+}
 
-    const columns = useMemo(() => COLUMNS, [])
-    const data = useMemo(() => holidaysData,[])
-    const tableInstance = useTable({
-        columns,
-        data
-    })
+interface TableProps {
+  data: any[];
+  columns: Column[];
+}
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
-
+const HolidaysTable: React.FC<TableProps> = ({ data, columns }) => {
     return (
-        <table {...getTableProps()}>
+        <table>
             <thead>
-                {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map((column) => (
-                            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <tr>
+                    {columns.map((column, index) => (
+                        <th key={index}>{column.header}</th>
+                    ))}
+                </tr>
+            </thead>
+            <tbody>
+                {data.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                        {columns.map((column, columnIndex) => (
+                            <td key={columnIndex}>{row[column.accessor]}</td>
                         ))}
                     </tr>
                 ))}
-            </thead>
-            <tbody {...getTableBodyProps}>
-                {rows.map((row) => {
-                    prepareRow(row)
-                    return(
-                        <tr {...row.getRowProps()}>
-                            {row.cells.map((cell) => {
-                                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                            })}
-                        </tr> 
-                    )
-                })}
             </tbody>
         </table>
-    )
-}
+    );
+};
+
+export default HolidaysTable;
