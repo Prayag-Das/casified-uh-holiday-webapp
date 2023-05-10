@@ -1,35 +1,28 @@
-import axios from 'axios';
-import * as console from "console";
-import json5 from "json5";
+import axios, { AxiosResponse } from 'axios';
 
-//TODO: Change BASE_URL to include domain from property file
+const BASEURL = 'http://localhost:8081/holidaysapi/api/holidays';
 
-/*
+interface Holiday {
+  description: string;
+  types: any;
+  closest: boolean;
+  year: number;
+  holidayTypes: string[];
+  officialYear: string;
+  observedDateFull: string;
+  officialDateFull: string;
+  observedDate: string;
+  officialDate: string;
+}
 
-const BASE_URL = "http://localhost:8081/holidaysapi/api/holidays";
-
-const HolidaysTableData = () => {
-    const getData = async () => {
-        try{
-            const res = await axios.get(BASE_URL);
-            const data = res.data;
-            console.log(data);
-            return json5.stringify(data);
-        } catch (error){
-            console.log("Error: could not fetch data");
-        }
-    };
-    return getData();
-};
-
-export default HolidaysTableData;
-*/
-const HolidaysTableData = async () => {
-    const result = await axios(
-        'http://localhost:8081/holidaysapi/api/holidays',
-    );
-    // return the result
-    return result;
-};
-
-export default HolidaysTableData;
+export function HolidaysTableData(): Promise<Holiday[]> {
+    return axios.get<Holiday[]>(BASEURL)
+        .then((response: AxiosResponse<Holiday[]>) => {
+            return response.data;
+        })
+        .catch((error) => {
+            // Handle error
+            console.error('Error fetching holiday data:', error);
+            return [];
+        });
+}

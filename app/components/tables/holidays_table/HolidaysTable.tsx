@@ -1,5 +1,5 @@
 import React from 'react';
-//import './table_element/table.css'
+import styles from './table.module.css';
 
 interface Column {
   header: string;
@@ -13,7 +13,7 @@ interface TableProps {
 
 const HolidaysTable: React.FC<TableProps> = ({ data, columns }) => {
     return (
-        <table>
+        <table className={styles.table}>
             <thead>
                 <tr>
                     {columns.map((column, index) => (

@@ -1,4 +1,4 @@
-import HolidaysTableData from "@/components/tables/holidays_table/table_element/HolidaysTableData";
+import {HolidaysTableData} from "@/components/tables/holidays_table/table_element/HolidaysTableData";
 import axios from "axios";
 describe('HolidaysTableData', () => {
     const BASE_URL = "http://localhost:8081/holidaysapi/api/holidays";
