@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './table.module.css';
 
 interface Column {
   header: string;
@@ -13,7 +12,7 @@ interface TableProps {
 
 const HolidaysTable: React.FC<TableProps> = ({ data, columns }) => {
     return (
-        <table className={styles.table}>
+        <table className="table table-striped">
             <thead>
                 <tr>
                     {columns.map((column, index) => (
