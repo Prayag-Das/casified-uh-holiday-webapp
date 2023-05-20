@@ -18,6 +18,7 @@ interface Holiday {
 export function HolidaysTableData(): Promise<Holiday[]> {
     return axios.get<Holiday[]>(BASEURL)
         .then((response: AxiosResponse<Holiday[]>) => {
+            //console.log('data has been fetched');
             return response.data;
         })
         .catch((error) => {

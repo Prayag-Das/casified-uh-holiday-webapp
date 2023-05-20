@@ -5,12 +5,25 @@ interface Column {
   accessor: string;
 }
 
+interface Holiday {
+  description: string;
+  types: any[];
+  closest: boolean;
+  year: number;
+  holidayTypes: string[];
+  officialYear: string;
+  observedDateFull: string;
+  officialDateFull: string;
+  observedDate: string;
+  officialDate: string;
+}
 interface TableProps {
-  data: any[];
+  data: Holiday[];
   columns: Column[];
 }
 
 const HolidaysTable: React.FC<TableProps> = ({ data, columns }) => {
+    
     return (
         <table className="table table-striped">
             <thead>
@@ -24,7 +37,7 @@ const HolidaysTable: React.FC<TableProps> = ({ data, columns }) => {
                 {data.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                         {columns.map((column, columnIndex) => (
-                            <td key={columnIndex}>{row[column.accessor]}</td>
+                            <td key={columnIndex}>{row[column.accessor as keyof Holiday]}</td>
                         ))}
                     </tr>
                 ))}
