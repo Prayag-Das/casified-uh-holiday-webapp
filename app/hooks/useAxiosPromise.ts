@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {URL_DATA_ROOT} from '@/constants/constants';
-import axios from 'axios';
+import axios from '../hooks/axiosConfig';
+
 const useAxiosPromise = (url: string) => {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
