@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Table } from 'react-bootstrap';
 import { useTable, Column } from 'react-table';
-import { Holiday } from '@/types/Holiday';
+import { Holiday } from '../../../types/Holiday';
 import HolidaysTableHeaders from '@/components/tables/holidays_table/table_element/HolidaysTableHeaders';
 
 interface HolidaysTableProps {
