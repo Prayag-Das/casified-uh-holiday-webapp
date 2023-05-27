@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import HolidaysTable from "@/components/tables/holidays_table/HolidaysTable";
-import Holidays from "../../../../pages/holidays";
+import Holidays from "../../../../pages/index";
 describe('HolidaysTable', () => {
     const columns = [
         { header: 'Name', accessor: 'name' },
