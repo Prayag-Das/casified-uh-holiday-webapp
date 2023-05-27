@@ -6,8 +6,18 @@ import useAxiosPromise from '../../../../hooks/useAxiosPromise';
 
 describe('HolidaysTable', () => {
     const columns = [
-        { header: 'Name', accessor: 'name' },
-        { header: 'Date', accessor: 'date' },
+        {
+            Header: 'Holiday',
+            accessor: 'description'
+        },
+        {
+            Header: 'Observed',
+            accessor: 'observedDateFull'
+        },
+        {
+            Header: 'Official',
+            accessor: 'officialDateFull'
+        }
     ];
 
     const { data, isLoading } = useAxiosPromise('holidays');

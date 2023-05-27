@@ -16,7 +16,7 @@ const Menubar = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse>
                     <Nav className="ms-auto">
-                        <Link href="/index" passHref legacyBehavior><Nav.Link>Home</Nav.Link></Link>
+                        <Link href="/" passHref legacyBehavior><Nav.Link>Home</Nav.Link></Link>
                         <Link href="/contact" passHref legacyBehavior><Nav.Link>Contact</Nav.Link></Link>
                         <Link href="/contact" passHref legacyBehavior><Nav.Link>About</Nav.Link></Link>
                         <CampusDropdown />
