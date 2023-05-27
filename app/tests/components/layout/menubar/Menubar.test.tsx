@@ -10,9 +10,9 @@ describe ('Menubar', () => {
         expect(screen.getByRole('navigation')).toBeInTheDocument;
         expect(screen.getByRole('img')).toHaveAttribute('src', '/holiday/seal.svg');
         expect(screen.getByRole('link', { name: 'hawaii.edu/holidays' })).toHaveAttribute('href', '/');
-        expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
+        expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/index');
         expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');
-        expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/faq');
+        expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/contact');
         expect(screen.getByRole('button', { name: 'Campuses' })).toBeInTheDocument;
     });
 

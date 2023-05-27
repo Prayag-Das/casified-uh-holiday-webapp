@@ -23,8 +23,8 @@ const HolidaysTable = ({data}: HolidaysTableProps) => {
     return (
         <Table {...getTableProps()} bordered striped>
             <thead>
-                {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
+                {headerGroups.map((headerGroup, index) => (
+                    <tr {...headerGroup.getHeaderGroupProps()} key={index}>
                         {headerGroup.headers.map((column) => (
                             <th {...column.getHeaderProps()} key={column.id}>
                                 {column.render('Header')}

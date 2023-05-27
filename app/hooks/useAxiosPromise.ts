@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {URL_DATA_ROOT} from '@/constants/constants';
+import {URL_DATA_ROOT} from '../constants/constants';
 import axios from '../hooks/axiosConfig';
 
 const useAxiosPromise = (url: string) => {
