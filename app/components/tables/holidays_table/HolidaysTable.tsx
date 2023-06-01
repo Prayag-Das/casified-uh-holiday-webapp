@@ -123,4 +123,10 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
     );
 };
 
-export default HolidaysTable;
+const AsyncHolidaysTable: React.FC<HolidaysTableProps> = ({ data }) => (
+    <React.Suspense fallback={<div>Loading...</div>}>
+        <HolidaysTable data={data} />
+    </React.Suspense>
+);
+
+export default AsyncHolidaysTable;
