@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import {useState} from "react";
 
-interface paginationBarProps {
+interface paginationProps {
     tableInstance : any
 }
-const PaginationBar = ({tableInstance} : paginationBarProps) => {
+const Pagination = ({tableInstance} : paginationProps) => {
     const [activePage, setActivePage] = useState(0);
     const startPage = Math.max(0, activePage - 2);
     const endPage = Math.min(tableInstance.getPageCount() - 1, startPage + 4);
@@ -69,4 +69,4 @@ const PaginationBar = ({tableInstance} : paginationBarProps) => {
     );
 }
 
-export default PaginationBar;
+export default Pagination;
