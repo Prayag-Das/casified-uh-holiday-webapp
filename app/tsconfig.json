@@ -2,18 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-<<<<<<< HEAD
       "@/access/*": [
         "access/*"
       ],
       "@/components/*": [
         "components/*"
       ]
-=======
-      "@/access/*": ["access/*"],
-      "@/components/*": ["components/*"],
-      "@/constants/*": ["constants/*"]
->>>>>>> f606c49 (iCreated HolidaysTable component using tanstack-table v8)
     },
     "target": "es5",
     "lib": [

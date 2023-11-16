@@ -23,11 +23,10 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
 
     const [filtering, setFiltering] = useState<string>("");
     const [firstColumnSorting, setFirstColumnSorting] = useState<'asc' | 'desc'>('asc');
-    const [sorting, setSorting] = useState([{ id: 'description', desc: firstColumnSorting === 'desc' }]);
-    const columns = HolidaysTableHeaders;
+    const [sorting, setSorting] = useState([{ id: 'description', desc: false }]);
 
     const tableInstance = useReactTable({
-        columns,
+        columns: HolidaysTableHeaders,
         data: data || [],
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
