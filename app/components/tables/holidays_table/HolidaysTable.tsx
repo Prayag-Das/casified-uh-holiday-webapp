@@ -13,6 +13,8 @@ import { Holiday } from './Holiday';
 import SortArrow from '@/components/tables/holidays_table/table_element/SortArrow';
 import PaginationBar from '@/components/tables/holidays_table/table_element/Pagination';
 import FilterBar from '@/components/tables/holidays_table/table_element/Filter';
+import '../../../styles/Home.module.css';
+
 interface HolidaysTableProps {
     data: Holiday[];
 }
@@ -39,27 +41,31 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
     });
 
     return (
-        <div>
+        <div className="container">
             {data === null ? (
-                <div style={{ textAlign: "center" }}>
-                    <p style={{ fontWeight: "bold", fontSize: "2em" }}>No Data Available</p>
+                <div className="text-center">
+                    <p className="font-weight-bold fs-2">No Data Available</p>
                 </div>
             ) : (
                 <>
                     <div className="d-flex justify-content-end">
-                        <FilterBar filtering={filtering} setFiltering={setFiltering}/>
+                        <FilterBar filtering={filtering} setFiltering={setFiltering} />
                     </div>
-                    <hr style={{ margin: "0", border: "none", borderTop: "1px solid #ccc" }} />
+                    <hr className="m-0 border-0 border-top-1 border-secondary" />
                     <table className="table table-striped">
                         <thead>
                             {tableInstance.getHeaderGroups().map((headerGroup) => (
                                 <tr key={headerGroup.id}>
                                     {headerGroup.headers.map((header) => (
-                                        <th key={header.id} onClick={header.column.getToggleSortingHandler()}
-                                            className="fw-bold fs-11" style={{ minWidth: '400px' }}>
-                                            {header.isPlaceholder ? null : flexRender(header.column.columnDef.header,
-                                                header.getContext())}
-                                            <SortArrow sortDirection={header.column.getIsSorted()}/>
+                                        <th
+                                            key={header.id}
+                                            onClick={header.column.getToggleSortingHandler()}
+                                            className="font-weight-bold fs-11"
+                                            style={{ minWidth: '400px' }}
+                                        >
+                                            {header.isPlaceholder ? null : 
+                                                flexRender(header.column.columnDef.header, header.getContext())}
+                                            <SortArrow sortDirection={header.column.getIsSorted()} />
                                         </th>
                                     ))}
                                 </tr>
@@ -77,7 +83,7 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                             ))}
                         </tbody>
                     </table>
-                    <PaginationBar tableInstance={tableInstance}/>
+                    <PaginationBar tableInstance={tableInstance} />
                 </>
             )}
         </div>
