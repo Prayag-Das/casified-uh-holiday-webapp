@@ -11,8 +11,8 @@ import { useMemo, useState, useEffect } from 'react';
 import HolidaysTableHeaders from '@/components/tables/holidays_table/table_element/HolidaysTableHeaders';
 import { Holiday } from './Holiday';
 import SortArrow from '@/components/tables/holidays_table/table_element/SortArrow';
-import PaginationBar from '@/components/tables/holidays_table/table_element/Pagination';
-import FilterBar from '@/components/tables/holidays_table/table_element/Filter';
+import Pagination from '@/components/tables/holidays_table/table_element/Pagination';
+import Filter from '@/components/tables/holidays_table/table_element/Filter';
 import '../../../styles/Home.module.css';
 
 interface HolidaysTableProps {
@@ -49,7 +49,7 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
             ) : (
                 <>
                     <div className="d-flex justify-content-end">
-                        <FilterBar filtering={filtering} setFiltering={setFiltering} />
+                        <Filter filtering={filtering} setFiltering={setFiltering} />
                     </div>
                     <hr className="m-0 border-0 border-top-1 border-secondary" />
                     <table className="table table-striped">
@@ -83,7 +83,7 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                             ))}
                         </tbody>
                     </table>
-                    <PaginationBar tableInstance={tableInstance} />
+                    <Pagination tableInstance={tableInstance} />
                 </>
             )}
         </div>

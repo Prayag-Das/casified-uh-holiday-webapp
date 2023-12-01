@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import HolidaysTable from "@/components/tables/holidays_table/HolidaysTable";
+import HolidaysTable from '@/components/tables/holidays_table/HolidaysTable';
 import { Holiday } from '@/components/tables/holidays_table/Holiday';
 import holidaysData from '../../../../public/data/holidaysData.json';
 
@@ -44,6 +44,25 @@ describe('HolidaysTable', () => {
         fireEvent.click(headerToSort3);
 
         // Add assertions to check if the table is correctly sorted
-        // For example, you can assert the order of specific rows based on sorting
+        fireEvent.click(headerToSort);
+        const christmasRows = screen.queryAllByText('Christmas');
+        expect(christmasRows.length).toBeGreaterThan(0);
+        fireEvent.click(headerToSort);
+        const veteransDayRows = screen.queryAllByText('Veterans\' Day');
+        expect(veteransDayRows.length).toBeGreaterThan(0);
+
+        fireEvent.click(headerToSort2);
+        let goodFridayRows = screen.queryAllByText('Good Friday');
+        expect(goodFridayRows.length).toBeGreaterThan(0);
+        fireEvent.click(headerToSort2);
+        let laborDayRows = screen.queryAllByText('Labor Day');
+        expect(laborDayRows.length).toBeGreaterThan(0);
+
+        fireEvent.click(headerToSort3);
+        goodFridayRows = screen.queryAllByText('Good Friday');
+        expect(goodFridayRows.length).toBeGreaterThan(0);
+        fireEvent.click(headerToSort3);
+        laborDayRows = screen.queryAllByText('Labor Day');
+        expect(laborDayRows.length).toBeGreaterThan(0);
     });
 });
