@@ -1,4 +1,7 @@
-import { ArrowUp, ArrowDown } from 'react-bootstrap-icons';
+'use client';
+
+import {ArrowUp, ArrowDown, ChevronBarUp, ChevronBarDown, ChevronUp, ChevronDown, CaretUpFill, CaretDownFill}
+    from 'react-bootstrap-icons';
 interface sortArrowProps {
     sortDirection : string | boolean
 }
@@ -6,8 +9,8 @@ interface sortArrowProps {
 const SortArrow = ({sortDirection}: sortArrowProps) => (
     <>
         {
-            sortDirection === 'asc' ? <ArrowUp/> :
-                sortDirection === 'desc' ? <ArrowDown/> : ''
+            sortDirection === 'asc' ? <CaretUpFill/> :
+                sortDirection === 'desc' ? <CaretDownFill/> : ''
         }
     </>
 )

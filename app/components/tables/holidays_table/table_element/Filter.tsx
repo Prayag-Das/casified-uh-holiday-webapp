@@ -1,22 +1,24 @@
-import {Dispatch, SetStateAction, useState} from 'react';
+'use client';
 
-interface filterProps {
-    filtering : string
-    setFiltering : Dispatch<SetStateAction<string>>
+import { Dispatch, SetStateAction, useState } from 'react';
+
+interface FilterProps {
+  filtering: string;
+  setFiltering: Dispatch<SetStateAction<string>>;
 }
 
-const Filter = ({filtering, setFiltering} : filterProps ) => {
+const Filter = ({ filtering, setFiltering }: FilterProps) => {
     return (
-        <div className="col-sm-3 my-3">
+        <div className="col-span-3 my-3">
             <input
-                className="form-control"
+                className="border rounded p-2 w-full"
                 type="text"
                 value={filtering}
                 onChange={(e) => setFiltering(e.target.value)}
-                placeholder={"Search by Holiday, Day, Month, Year "}
+                placeholder="Search by Holiday, Day, Month, Year"
             />
         </div>
-    )
-}
+    );
+};
 
 export default Filter;

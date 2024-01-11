@@ -7,7 +7,7 @@ describe('Filter', () => {
         render(<HolidaysTable data={holidaysData}/>);
 
         const filter = screen.getByRole('textbox') as HTMLInputElement;
-        expect(filter.placeholder).toBe('Search by Holiday, Day, Month, Year ');
+        expect(filter.placeholder).toBe('Search by Holiday, Day, Month, Year');
     });
 
     it('Input box is clickable.', () => {

@@ -7,6 +7,12 @@
       ],
       "@/components/*": [
         "components/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
       ]
     },
     "target": "es5",
@@ -35,8 +41,6 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.test.ts",
-    "**/*.test.tsx",
     ".next/types/**/*.ts"
   ],
   "exclude": [

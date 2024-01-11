@@ -1,3 +1,5 @@
+'use client';
+
 import {
     useReactTable,
     flexRender,
@@ -6,18 +8,18 @@ import {
     getFilteredRowModel,
     getSortedRowModel,
 } from '@tanstack/react-table';
-import useAxiosPromise from '../../../hooks/useAxiosPromise';
+import useAxiosPromise from '@/hooks/useAxiosPromise';
 import { useMemo, useState, useEffect } from 'react';
 import HolidaysTableHeaders from '@/components/tables/holidays_table/table_element/HolidaysTableHeaders';
 import { Holiday } from './Holiday';
 import SortArrow from '@/components/tables/holidays_table/table_element/SortArrow';
 import Pagination from '@/components/tables/holidays_table/table_element/Pagination';
 import Filter from '@/components/tables/holidays_table/table_element/Filter';
-import '../../../styles/Home.module.css';
-interface HolidaysTableProps {
-    data: Holiday[];
-}
+import '../../../app/global.css';
 
+interface HolidaysTableProps {
+  data: Holiday[];
+}
 
 const HolidaysTable = ({ data }: HolidaysTableProps) => {
 
@@ -41,18 +43,18 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
     });
 
     return (
-        <div className="container">
+        <div className="container mx-auto p-4">
             {data === null ? (
                 <div className="text-center">
-                    <p className="font-weight-bold fs-2">No Data Available</p>
+                    <p className="font-bold text-2xl">No Data Available</p>
                 </div>
             ) : (
                 <>
-                    <div className="d-flex justify-content-end">
+                    <div className="flex justify-end mb-4">
                         <Filter filtering={filtering} setFiltering={setFiltering} />
                     </div>
-                    <hr className="m-0 border-0 border-top-1 border-secondary" />
-                    <table className="table table-striped">
+                    <div className="divider"></div>
+                    <table className="groupings-table">
                         <thead>
                             {tableInstance.getHeaderGroups().map((headerGroup) => (
                                 <tr key={headerGroup.id}>
@@ -60,28 +62,39 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                                         <th
                                             key={header.id}
                                             onClick={header.column.getToggleSortingHandler()}
-                                            className="font-weight-bold fs-11"
+                                            scope="col"
+                                            className="px-2 py-2.5"
                                             style={{ minWidth: '400px' }}
                                         >
-                                            {header.isPlaceholder ? null : 
-                                                flexRender(header.column.columnDef.header, header.getContext())}
-                                            <SortArrow sortDirection={header.column.getIsSorted()} />
+                                            <div className="header-content">
+                                                {header.isPlaceholder ? null :
+                                                    flexRender(header.column.columnDef.header, header.getContext())}
+                                                <SortArrow sortDirection={header.column.getIsSorted()} />
+                                            </div>
                                         </th>
                                     ))}
                                 </tr>
                             ))}
                         </thead>
                         <tbody>
-                            {tableInstance.getRowModel().rows.map((row) => (
-                                <tr key={row.id}>
+                            {tableInstance.getRowModel().rows.map((row, index: number) => (
+                                <tr
+                                    className={`${
+                                        index % 2 === 0
+                                            ? 'bg-off-white'
+                                            : 'bg-white'
+                                    } border-b border-off-white`}
+                                    key={row.id}
+                                >
                                     {row.getVisibleCells().map((cell) => (
-                                        <td key={cell.id} style={{ minWidth: '400px' }}>
+                                        <td key={cell.id} className="p-2">
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                         </td>
                                     ))}
                                 </tr>
                             ))}
                         </tbody>
+                        
                     </table>
                     <Pagination tableInstance={tableInstance} />
                 </>

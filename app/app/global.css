@@ -49,15 +49,7 @@
 }
 
 .navbar-brand {
-<<<<<<< HEAD
-  position: fixed;
-  width: 45px;
-  height: 45px;
-  top: 3px;
-  left: 23px;
-=======
   @apply fixed w-[45px] h-[45px] left-[23px] top-[3px];
->>>>>>> 8a86f44 (Add Tailwind (#30))
 }
 
 .uh-nav-app-name {
@@ -79,55 +71,7 @@
 
 @media screen(sm) {
   body {
-<<<<<<< HEAD
-    padding-top: 100px;
-    padding-bottom: 50px;
-    background-color: white;
-  }
-
-  .container {
-    width: 750px !important;
-    max-width: 750px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .navbar {
-    font-size: 14px;
-    margin-top: 37px;
-  }
-
-  .navbar-brand {
-    width: 78px;
-    height: 78px;
-    top: 6px;
-    left: 31px;
-  }
-
-  .navbar-nav {
-    position: relative;
-    top: 2px;
-    left: 22.5px;
-  }
-
-  .uh-nav-app-name {
-    font-size: 22px;
-    display: inline;
-    position: absolute;
-    margin-left: 89px;
-    margin-top: 33px;
-    background-color: transparent;
-  }
-
-  .uh-branding-one {
-    font-size: 1.8em;
-  }
-
-  .uh-branding-two {
-    font-size: 1.0em;
-=======
     @apply bg-[white] pt-[100px] pb-[50px] !important;
->>>>>>> 8a86f44 (Add Tailwind (#30))
   }
 }
 
@@ -189,4 +133,29 @@ a.dropdown-item:active {
 
 a.dropdown-toggle::after {
   @apply align-middle ml-1.5;
+}
+
+.divider {
+  @apply w-full border-b border-off-white
+}
+
+.pagination-button-first {
+  @apply bg-white border-b ring-1 ring-off-white hover:bg-off-white text-black font-bold py-2 px-2 rounded-s-lg disabled:bg-off-white disabled:text-gray;
+}
+
+.pagination-button-middle {
+  @apply bg-white border-b ring-1 ring-off-white hover:bg-off-white text-black py-2 px-2 disabled:bg-off-white disabled:text-gray;
+}
+
+.pagination-button-last {
+  @apply bg-white border-b ring-1 ring-off-white hover:bg-off-white text-black font-bold py-2 px-2 rounded-e-lg disabled:bg-off-white disabled:text-gray;
+}
+
+.groupings-table {
+  @apply table-auto w-full
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
 }
