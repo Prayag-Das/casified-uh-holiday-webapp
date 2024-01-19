@@ -24,7 +24,11 @@
 
 @layer base {
   html {
-    @apply overflow-auto;
+    @apply relative min-h-full overflow-y-scroll pt-0 !important;
+  }
+
+  body {
+    @apply text-sm bg-white pt-[60px] pb-[50px] !important;
   }
 
   a {
