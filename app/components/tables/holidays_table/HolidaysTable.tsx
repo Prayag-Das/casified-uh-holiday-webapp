@@ -8,8 +8,7 @@ import {
     getFilteredRowModel,
     getSortedRowModel,
 } from '@tanstack/react-table';
-import useAxiosPromise from '@/hooks/useAxiosPromise';
-import { useMemo, useState, useEffect } from 'react';
+import { useState } from 'react';
 import HolidaysTableHeaders from '@/components/tables/holidays_table/table_element/HolidaysTableHeaders';
 import { Holiday } from './Holiday';
 import SortArrow from '@/components/tables/holidays_table/table_element/SortArrow';
@@ -24,7 +23,6 @@ interface HolidaysTableProps {
 const HolidaysTable = ({ data }: HolidaysTableProps) => {
 
     const [filtering, setFiltering] = useState<string>("");
-    const [firstColumnSorting, setFirstColumnSorting] = useState<'asc' | 'desc'>('asc');
     const [sorting, setSorting] = useState([{ id: 'description', desc: false }]);
 
     const tableInstance = useReactTable({

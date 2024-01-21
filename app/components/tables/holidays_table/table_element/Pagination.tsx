@@ -1,14 +1,9 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useReactTable } from '@tanstack/react-table';
 import { Holiday } from '@/components/tables/holidays_table/Holiday';
-import {CaretLeft, CaretLeftFill, CaretRight, CaretRightFill, SkipEndFill, SkipStartFill} from "react-bootstrap-icons";
-
-interface Node {
-  value: number;
-  next?: Node | null;
-}
+import {CaretLeft, CaretRight, SkipEndFill, SkipStartFill} from "react-bootstrap-icons";
 
 interface PaginationProps {
   tableInstance: ReturnType<typeof useReactTable<Holiday>>;
@@ -18,20 +13,6 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
     const [activePage, setActivePage] = useState(0);
     const startPage = Math.max(0, activePage - 2);
     const endPage = Math.min(tableInstance.getPageCount() - 1, startPage + 4);
-
-    const paginationButtonsRef = useRef<Node | null>(null);
-
-    const addPageToLinkedList = (page: number) => {
-        const newNode: Node = { value: page, next: paginationButtonsRef.current };
-        paginationButtonsRef.current = newNode;
-    };
-
-    const removeFirstPageFromLinkedList = () => {
-        if (!paginationButtonsRef.current) {
-            return;
-        }
-        paginationButtonsRef.current = paginationButtonsRef.current.next || null;
-    };
 
     const paginationButtons = [];
 
@@ -50,7 +31,6 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                 {i + 1}
             </button>
         );
-        addPageToLinkedList(i);
     }
 
     const navigateToPage = (page: number) => {
@@ -73,25 +53,21 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                     disabled={!tableInstance.getCanPreviousPage()}
                     onClick={() => {
                         tableInstance.previousPage();
-                        removeFirstPageFromLinkedList();
-                        addPageToLinkedList(startPage - 1);
                         setActivePage(activePage - 1);
                     }}
                 >
                     <CaretLeft className="me-1"/> Prev
                 </button>
-                {paginationButtons.map((u) => u)}
+                {paginationButtons}
                 <button type="button"
                     className="pagination-button-middle d-flex align-items-center"
                     disabled={!tableInstance.getCanNextPage()}
                     onClick={() => {
                         tableInstance.nextPage();
-                        removeFirstPageFromLinkedList();
-                        addPageToLinkedList(endPage + 1);
                         setActivePage(activePage + 1);
                     }}
                 >
-                  Next <CaretRight className="me-1"/>
+          Next <CaretRight className="me-1"/>
                 </button>
                 <button type="button"
                     className="pagination-button-last d-flex align-items-center"
@@ -102,7 +78,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(lastPage);
                     }}
                 >
-                  Last <SkipEndFill className="me-1"/>
+          Last <SkipEndFill className="me-1"/>
                 </button>
             </div>
         </div>
