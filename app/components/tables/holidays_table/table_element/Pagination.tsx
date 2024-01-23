@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useReactTable } from '@tanstack/react-table';
 import { Holiday } from '@/components/tables/holidays_table/Holiday';
-import {CaretLeft, CaretRight, SkipEndFill, SkipStartFill} from "react-bootstrap-icons";
+import {IconChevronLeftPipe, IconChevronRightPipe, IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
 
 interface PaginationProps {
   tableInstance: ReturnType<typeof useReactTable<Holiday>>;
@@ -16,12 +16,21 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
 
     const paginationButtons = [];
 
+    const buttonStyle = {
+        height: '40px', // Adjust the height as needed
+        width: '50px',  // Adjust the width as needed
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    };
+
     for (let i = startPage; i <= endPage; i++) {
         paginationButtons.push(
             <button
                 key={i}
-                className={`border-b text-black ring-1 ring-off-white px-3.5 ${
-                    activePage === i ? 'bg-green-200 hover:bg-green-200' : 'bg-white hover:bg-off-white'
+                style={buttonStyle}
+                className={`border-b ring-1 ring-light-dark-3-4 px-3.5 ${
+                    activePage === i ? 'bg-green-200 hover:bg-green-200 text-black' : 'hover:bg-light-dark-3-4'
                 }`}
                 onClick={() => {
                     tableInstance.setPageIndex(i);
@@ -42,13 +51,15 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
         <div className="flex justify-end mt-4">
             <div className="inline-flex rounded-md shadow-sm" role="group">
                 <button type="button"
+                    name={"First"}
+                    style={buttonStyle}
                     className="pagination-button-first d-flex align-items-center"
                     disabled={!tableInstance.getCanPreviousPage()}
                     onClick={() => navigateToPage(0)}
-                >
-                    <SkipStartFill className="me-1"/> First
-                </button>
+                ><IconChevronLeftPipe className="align-items-center"/></button>
                 <button type="button"
+                    name={"Prev"}
+                    style={buttonStyle}
                     className="pagination-button-middle d-flex align-items-center"
                     disabled={!tableInstance.getCanPreviousPage()}
                     onClick={() => {
@@ -56,10 +67,12 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(activePage - 1);
                     }}
                 >
-                    <CaretLeft className="me-1"/> Prev
+                    <IconChevronLeft className="align-items-center"/>
                 </button>
                 {paginationButtons}
                 <button type="button"
+                    name={"Next"}
+                    style={buttonStyle}
                     className="pagination-button-middle d-flex align-items-center"
                     disabled={!tableInstance.getCanNextPage()}
                     onClick={() => {
@@ -67,9 +80,11 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(activePage + 1);
                     }}
                 >
-          Next <CaretRight className="me-1"/>
+                    <IconChevronRight className="align-items-center"/>
                 </button>
                 <button type="button"
+                    name="Last"
+                    style={buttonStyle}
                     className="pagination-button-last d-flex align-items-center"
                     disabled={!tableInstance.getCanNextPage()}
                     onClick={() => {
@@ -78,8 +93,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(lastPage);
                     }}
                 >
-          Last <SkipEndFill className="me-1"/>
-                </button>
+                    <IconChevronRightPipe className="align-items-center"/></button>
             </div>
         </div>
     );

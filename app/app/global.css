@@ -70,27 +70,27 @@
   }
 }
 
-/*.divider {
-  @apply w-full border-b border-off-white
+.divider {
+    @apply w-full border-b border-off-white
 }
 
 .pagination-button-first {
-  @apply bg-white border-b ring-1 ring-off-white hover:bg-off-white text-black font-bold py-2 px-2 rounded-s-lg disabled:bg-off-white disabled:text-gray;
+  @apply border-b ring-1 ring-light-dark-3-4 font-bold py-2 px-2 rounded-s-lg disabled:text-light-dark-3-4;
 }
 
 .pagination-button-middle {
-  @apply bg-white border-b ring-1 ring-off-white hover:bg-off-white text-black py-2 px-2 disabled:bg-off-white disabled:text-gray;
+    @apply border-b ring-1 ring-light-dark-3-4 py-2 px-2 disabled:text-light-dark-3-4;
 }
 
 .pagination-button-last {
-  @apply bg-white border-b ring-1 ring-off-white hover:bg-off-white text-black font-bold py-2 px-2 rounded-e-lg disabled:bg-off-white disabled:text-gray;
+  @apply border-b ring-1 ring-light-dark-3-4 font-bold py-2 px-2 rounded-e-lg disabled:text-light-dark-3-4;
 }
 
 .groupings-table {
-  @apply table-auto w-full
+    @apply table-auto w-full
 }
 
 .header-content {
-  display: flex;
-  align-items: center;
-}*/
+    display: flex;
+    align-items: center;
+}
