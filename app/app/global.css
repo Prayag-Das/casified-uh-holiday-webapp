@@ -24,11 +24,7 @@
 
 @layer base {
   html {
-    @apply relative min-h-full overflow-y-scroll pt-0 !important;
-  }
-
-  body {
-    @apply text-sm bg-white pt-[60px] pb-[50px] !important;
+    @apply overflow-auto;
   }
 
   a {
@@ -60,10 +56,10 @@
   .mantine-hidden-light {
     @mixin light {
       display: none;
-    } 
+    }
 
     @mixin dark {
-        display: block;
+      display: block;
     }
   }
 
@@ -75,7 +71,7 @@
 }
 
 .divider {
-    @apply w-full border-b border-off-white
+  @apply w-full border-b border-off-white
 }
 
 .pagination-button-first {
@@ -83,7 +79,7 @@
 }
 
 .pagination-button-middle {
-    @apply border-b ring-1 ring-light-dark-3-4 py-2 px-2 disabled:text-light-dark-3-4;
+  @apply border-b ring-1 ring-light-dark-3-4 py-2 px-2 disabled:text-light-dark-3-4;
 }
 
 .pagination-button-last {
@@ -91,10 +87,10 @@
 }
 
 .groupings-table {
-    @apply table-auto w-full
+  @apply table-auto w-full
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
