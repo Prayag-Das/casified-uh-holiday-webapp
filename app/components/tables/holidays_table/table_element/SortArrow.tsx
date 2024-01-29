@@ -1,17 +1,20 @@
 'use client';
 
-import {ArrowUp, ArrowDown, ChevronBarUp, ChevronBarDown, ChevronUp, ChevronDown, CaretUpFill, CaretDownFill}
-    from 'react-bootstrap-icons';
+import {IconSortAscending, IconSortDescending, IconArrowsSort} from "@tabler/icons-react";
+
 interface sortArrowProps {
     sortDirection : string | boolean
 }
 
 const SortArrow = ({sortDirection}: sortArrowProps) => (
     <>
-        {
-            sortDirection === 'asc' ? <CaretUpFill/> :
-                sortDirection === 'desc' ? <CaretDownFill/> : ''
-        }
+        {sortDirection === 'asc' ? (
+            <IconSortAscending />
+        ) : sortDirection === 'desc' ? (
+            <IconSortDescending />
+        ) : (
+            <IconArrowsSort />
+        )}
     </>
 )
 
