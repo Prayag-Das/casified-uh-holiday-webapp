@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useReactTable } from '@tanstack/react-table';
 import { Holiday } from '@/components/tables/holidays_table/Holiday';
-import {IconChevronLeftPipe, IconChevronRightPipe, IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
+//import {IconChevronLeftPipe, IconChevronRightPipe, IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
 
 interface PaginationProps {
   tableInstance: ReturnType<typeof useReactTable<Holiday>>;
@@ -56,7 +56,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                     className="pagination-button-first d-flex align-items-center"
                     disabled={!tableInstance.getCanPreviousPage()}
                     onClick={() => navigateToPage(0)}
-                ><IconChevronLeftPipe className="align-items-center"/></button>
+                > {'|<'} </button>
                 <button type="button"
                     name={"Prev"}
                     style={buttonStyle}
@@ -67,7 +67,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(activePage - 1);
                     }}
                 >
-                    <IconChevronLeft className="align-items-center"/>
+                    {'<'}
                 </button>
                 {paginationButtons}
                 <button type="button"
@@ -80,7 +80,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(activePage + 1);
                     }}
                 >
-                    <IconChevronRight className="align-items-center"/>
+                    {'>'}
                 </button>
                 <button type="button"
                     name="Last"
@@ -93,7 +93,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
                         setActivePage(lastPage);
                     }}
                 >
-                    <IconChevronRightPipe className="align-items-center"/></button>
+                    {'>|'}</button>
             </div>
         </div>
     );

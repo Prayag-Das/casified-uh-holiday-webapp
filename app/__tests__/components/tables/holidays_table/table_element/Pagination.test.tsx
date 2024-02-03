@@ -7,10 +7,10 @@ describe('Pagination', () => {
     it('Renders first, last, previous, and next buttons.', () => {
         render(<HolidaysTable data={holidaysData}/>);
 
-        const first = screen.getByRole('button', { name: 'First' });
-        const prev = screen.getByRole('button', { name: 'Prev' });
-        const next = screen.getByRole('button', { name: 'Next' });
-        const last = screen.getByRole('button', { name: 'Last' });
+        const first = screen.getByRole('button', { name: '|<' });
+        const prev = screen.getByRole('button', { name: '<' });
+        const next = screen.getByRole('button', { name: '>' });
+        const last = screen.getByRole('button', { name: '>|' });
 
         expect(first).toBeInTheDocument();
         expect(prev).toBeInTheDocument();
@@ -21,8 +21,8 @@ describe('Pagination', () => {
     it('First page and last page buttons access the correct pages.', () => {
         render(<HolidaysTable data={holidaysData}/>);
 
-        const first = screen.getByRole('button', { name: 'First' });
-        const last = screen.getByRole('button', { name: 'Last' });
+        const first = screen.getByRole('button', { name: '|<' });
+        const last = screen.getByRole('button', { name: '>|' });
 
         fireEvent.click(last);
         let firstPage = screen.queryAllByRole('button', { name: '1' });
@@ -40,8 +40,8 @@ describe('Pagination', () => {
     it('Updates the pagination bar as the current page increases and decreases.', () => {
         render(<HolidaysTable data={holidaysData}/>);
 
-        const prev = screen.getByRole('button', { name: 'Prev' });
-        const next = screen.getByRole('button', { name: 'Next' });
+        const prev = screen.getByRole('button', { name: '<' });
+        const next = screen.getByRole('button', { name: '>' });
         let firstPage = screen.queryAllByRole('button', { name: '1' });
         expect(firstPage.length).toBe(1);
         for (let i = 0; i < 3; i++){
