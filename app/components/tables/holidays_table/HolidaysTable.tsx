@@ -14,7 +14,7 @@ import { Holiday } from './Holiday';
 import SortArrow from '@/components/tables/holidays_table/table_element/SortArrow';
 import Pagination from '@/components/tables/holidays_table/table_element/Pagination';
 import Filter from '@/components/tables/holidays_table/table_element/Filter';
-import '../../../app/global.css';
+import '../../../app/globals.css';
 
 interface HolidaysTableProps {
   data: Holiday[];
