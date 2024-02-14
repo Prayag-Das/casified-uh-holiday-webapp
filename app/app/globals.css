@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer tailwind {
+  @tailwind base;
+}
+
+@font-face {
+  font-family: cinzel-regular;
+  src: url('../public/fonts/Cinzel-Regular.ttf');
+}
+
+@font-face {
+  font-family: cinzel-decorative-bold;
+  src: url('../public/fonts/CinzelDecorative-Bold.ttf');
+}
+
+@font-face {
+  font-family: cormorant-upright-regular;
+  src: url('../public/fonts/CormorantUpright-Regular.ttf');
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,28 +84,3 @@
     --ring: 0 0% 83.1%;
   }
 }
-
-@font-face {
-  font-family: cinzel-regular;
-  src: url('../public/fonts/Cinzel-Regular.ttf');
-}
-
-@font-face {
-  font-family: cinzel-decorative-bold;
-  src: url('../public/fonts/CinzelDecorative-Bold.ttf');
-}
-
-@font-face {
-  font-family: cormorant-upright-regular;
-  src: url('../public/fonts/CormorantUpright-Regular.ttf');
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-

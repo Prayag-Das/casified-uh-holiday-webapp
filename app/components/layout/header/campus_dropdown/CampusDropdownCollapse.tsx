@@ -1,3 +1,4 @@
+/*
 import { Box, Center, Collapse, Divider, UnstyledButton, Text, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
@@ -38,4 +39,60 @@ const CampusCollapse = () => {
     );
 }
  
+export default CampusCollapse;
+*/
+
+import { useState } from 'react';
+import { Center, Transition } from '@tailwindui/react';
+import { IconChevronDown } from '@tabler/icons-react';
+
+const CampusCollapse = () => {
+  const [collapseOpened, setCollapseOpened] = useState(false);
+
+  const toggleCollapse = () => {
+    setCollapseOpened(!collapseOpened);
+  };
+
+  return (
+    <>
+      <div className="link">
+        <button className="text-sm font-medium leading-none focus:outline-none" onClick={toggleCollapse}>
+          <Center>
+            <span className="mr-1 text-sm leading-none font-medium">Campuses</span>
+            <IconChevronDown size="0.9rem" stroke={1.5} />
+          </Center>
+        </button>
+      </div>
+
+      <Transition
+        show={collapseOpened}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div className="ml-4" data-testid="collapse">
+          <p className="text-gray-500 mb-6 font-semibold text-sm">Universities</p>
+          <a className="link py-3 block" href="https://hilo.hawaii.edu/" target="_uhhi" role="link">Hilo</a>
+          <a className="link py-3 block" href="https://manoa.hawaii.edu/" target="_uhma" role="link">Manoa</a>
+          <a className="link py-3 block" href="http://westoahu.hawaii.edu/" target="_uhwo" role="link">West Oahu</a>
+
+          <hr className="my-10" />
+
+          <p className="text-gray-500 mb-6 font-semibold text-sm">Community Colleges</p>
+          <a className="link py-3 block" href="https://hawaii.hawaii.edu/" target="_uhcchi" role="link">Hawaii</a>
+          <a className="link py-3 block" href="http://honolulu.hawaii.edu/" target="_uhccho" role="link">Honolulu</a>
+          <a className="link py-3 block" href="http://kapiolani.hawaii.edu/" target="_uhccka" role="link">Kapiolani</a>
+          <a className="link py-3 block" href="http://kauai.hawaii.edu/" target="_uhccku" role="link">Kauai</a>
+          <a className="link py-3 block" href="http://www.leeward.hawaii.edu/" target="_uhccle" role="link">Leeward</a>
+          <a className="link py-3 block" href="http://maui.hawaii.edu/" target="_uhccmu" role="link">Maui</a>
+          <a className="link py-3 block" href="http://windward.hawaii.edu/" target="_uhccwi" role="link">Windward</a>
+        </div>
+      </Transition>
+    </>
+  );
+}
+
 export default CampusCollapse;
