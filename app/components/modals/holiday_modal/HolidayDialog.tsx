@@ -110,7 +110,6 @@ export const HolidayDialog = (holiday: Holiday) => {
     return (
         <Dialog>
             {/*<DialogTrigger asChild>
-
             </DialogTrigger>*/}
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
