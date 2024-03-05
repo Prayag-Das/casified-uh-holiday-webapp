@@ -1,4 +1,4 @@
-import { displayHolidayModal } from '@/components/modals/holiday_modal/HolidayDialog';
+import { displayHolidayModal } from '@/components/dialogs/holiday_dialog/HolidayDialog';
 import { renderWithProviders } from 'jest.setup';
 import { modals } from '@mantine/modals';
 import { fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';

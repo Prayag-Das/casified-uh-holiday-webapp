@@ -1,7 +1,7 @@
 /*
 import { getCurrentUser } from '@/access/AuthenticationService';
 import { Container, Group } from '@mantine/core';
-import LoginButton from './login_button/LoginButton';
+import LoginButton.ts from './login_button/LoginButton.ts';
 import Role from '@/access/Role';
 import ColorSchemeToggle from './color_scheme_toggle/ColorSchemeToggle';
 import CampusDropdown from './campus_dropdown/CampusDropdownMenu';
@@ -24,7 +24,7 @@ const Header = async () => {
                             && <Link className="link" href="/contact">Contact</Link>}
                         <Link className="link" href="/about">About</Link>
                         <CampusDropdown />
-                        <LoginButton currentUser={currentUser} />
+                        <LoginButton.ts currentUser={currentUser} />
                         <ColorSchemeToggle />
                     </Group>
 
@@ -75,4 +75,3 @@ const Header = async () => {
 }
 
 export default Header;
-

@@ -94,6 +94,8 @@ export const displayHolidayDialog = (holiday: Holiday) => {
 
 export default HolidayDialog;*/
 
+'use client';
+
 import {
     Dialog,
     DialogContent,
@@ -101,15 +103,16 @@ import {
     DialogHeader,
     DialogTitle,
     /*DialogTrigger,*/
-} from "@/components/ui/dialog"
-import { Label } from "@/components/ui/label"
-import {Holiday} from "@/components/tables/holidays_table/Holiday";
+} from '@/components/ui/dialog';
+import { Label } from '@/components/ui/label';
+import {Holiday} from '@/components/tables/holidays_table/Holiday';
 
 
 export const HolidayDialog = (holiday: Holiday) => {
     return (
         <Dialog>
             {/*<DialogTrigger asChild>
+              We will attempt to incorporate this when the shadcn table is implemented.
             </DialogTrigger>*/}
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>

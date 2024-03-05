@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import User from '@/access/User';
 import { RenderOptions, render } from '@testing-library/react';
 import { ModalsProvider } from '@mantine/modals';
-import HolidayModal from '@/components/modals/holiday_modal/HolidayDialog';
+import HolidayModal from '@/components/dialogs/holiday_dialog/HolidayDialog';
 
 enableFetchMocks();
 loadEnvConfig(process.cwd());

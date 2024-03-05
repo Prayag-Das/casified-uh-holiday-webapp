@@ -34,16 +34,10 @@ const RootLayout = ({
 export default RootLayout;
 */
 
-
 import './globals.css';
 import Header from '@/components/layout/header/Header';
 import Footer from '@/components/layout/footer/Footer';
 import {ThemeProvider} from "@/components/theme-provider";
-/*import HolidayModal from '@/components/modals/holiday_modal/HolidayModal';
-
-const theme = createTheme({
-    primaryColor: 'blue'
-});*/
   
 const RootLayout = ({
     children

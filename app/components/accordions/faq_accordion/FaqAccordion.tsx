@@ -77,7 +77,7 @@ const FaqAccordion = () => {
             React.js <br/>
             Next.js <br/>
             Tailwind CSS <br/>
-            Mantine
+            shadcn/ui
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

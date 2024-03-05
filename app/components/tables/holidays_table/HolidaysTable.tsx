@@ -8,12 +8,15 @@ import {
     getFilteredRowModel,
     getSortedRowModel,
 } from '@tanstack/react-table';
-import { useState } from 'react';
+import {useState} from 'react';
 import HolidaysTableHeaders from '@/components/tables/holidays_table/table_element/HolidaysTableHeaders';
 import { Holiday } from './Holiday';
 import SortArrow from '@/components/tables/holidays_table/table_element/SortArrow';
 import Pagination from '@/components/tables/holidays_table/table_element/Pagination';
 import Filter from '@/components/tables/holidays_table/table_element/Filter';
+/*
+import HolidayDialog from "@/components/dialogs/holiday_dialog/HolidayDialog";
+*/
 import '../../../app/globals.css';
 
 interface HolidaysTableProps {
@@ -45,7 +48,7 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
             <div className="flex justify-end mb-4">
                 <Filter filtering={filtering} setFiltering={setFiltering} />
             </div>
-            <table className="groupings-table">
+            <table>
                 <thead>
                     {tableInstance.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id}>
@@ -81,12 +84,12 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                             {row.getVisibleCells().map((cell) => (
                                 <td key={cell.id} className="p-2">
                                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    {}
                                 </td>
                             ))}
                         </tr>
                     ))}
                 </tbody>
-
             </table>
             <Pagination tableInstance={tableInstance} />
         </div>
