@@ -1,3 +1,5 @@
+'use client';
+
 import {
     Accordion,
     AccordionContent,
@@ -21,7 +23,7 @@ const FaqAccordion = () => {
     const springBootGuide = 'https://docs.spring.io/spring-boot/docs/2.6.2/reference/htmlsingle/';
 
     return (
-        <Accordion variant="separated" data-testid="faq-accordion">
+        <Accordion type="single" collapsible className="w-full">
             <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">General Questions</h3>
             <AccordionItem value="Who can answer some basic questions about the application?">
                 <AccordionTrigger>Who can answer some basic questions about the application?</AccordionTrigger>

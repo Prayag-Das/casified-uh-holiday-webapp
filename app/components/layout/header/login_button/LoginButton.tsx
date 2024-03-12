@@ -13,10 +13,11 @@ const LoginButton = ({
 }) => (
     <>
         {!currentUser.roles.includes(Role.UH)
-            ? <Button className={"bg-cyan-600 ring-1 ring-cyan-800 text-white hover:bg-cyan-800"} Click={() => login()}>
+            ? <Button className={"bg-cyan-600 ring-1 ring-cyan-800 text-white hover:bg-cyan-800"} onClick={() =>
+                login()}>
               Login <IconLogin2 />
             </Button>
-            : <Button variant="filled" onClick={() => logout()}>Logout ({currentUser.uid})</Button>}
+            : <Button variant="default" onClick={() => logout()}>Logout ({currentUser.uid})</Button>}
     </> 
 );
 

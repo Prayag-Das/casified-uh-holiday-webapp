@@ -43,7 +43,7 @@ import LoginButton from './login_button/LoginButton';
 import Role from '@/access/Role';
 import ColorSchemeToggle from './color_scheme_toggle/ColorSchemeToggle';
 import CampusDropdown from './campus_dropdown/CampusDropdownMenu';
-import HamburgerMenu from './hamburger_menu/HamburgerMenu';
+/*import HamburgerMenu from './hamburger_menu/HamburgerMenu';*/
 import UHBrand from './uh_brand/UHBrand';
 import Link from 'next/link';
 
@@ -66,8 +66,7 @@ const Header = async () => {
                         <LoginButton currentUser={currentUser} />
                         <ColorSchemeToggle />
                     </div>
-
-                    <HamburgerMenu currentUser={currentUser} />
+                    {/* <HamburgerMenu currentUser={currentUser} /> */}
                 </div>
             </div>
         </header>

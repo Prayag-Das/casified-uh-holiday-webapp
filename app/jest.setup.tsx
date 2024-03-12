@@ -1,10 +1,10 @@
 import { loadEnvConfig } from '@next/env';
 import { enableFetchMocks } from 'jest-fetch-mock';
-import { MantineProvider } from '@mantine/core';
+import {ThemeProvider} from "@/components/theme-provider";
 import User from '@/access/User';
 import { RenderOptions, render } from '@testing-library/react';
-import { ModalsProvider } from '@mantine/modals';
-import HolidayModal from '@/components/dialogs/holiday_dialog/HolidayDialog';
+/*import { ModalsProvider } from '@mantine/modals';
+import HolidayModal from '@/components/dialogs/holiday_dialog/HolidayDialog';*/
 
 enableFetchMocks();
 loadEnvConfig(process.cwd());
@@ -26,11 +26,12 @@ const providers = ({
 } : {
     children: React.ReactNode
 }) => (
-    <MantineProvider defaultColorScheme="light">
-        <ModalsProvider modals={{ holiday: HolidayModal }}>
+    <ThemeProvider defaultTheme={"light"}>
+        {/*<ModalsProvider modals={{ holiday: HolidayModal }}>
             {children}
-        </ModalsProvider>
-    </MantineProvider>
+        </ModalsProvider>*/}
+        {children}
+    </ThemeProvider>
 );
 
 export const renderWithProviders = (

@@ -1,3 +1,5 @@
+'use client';
+
 import {
     Accordion,
     AccordionContent,
@@ -10,7 +12,7 @@ const ContactAccordion = () => {
     const itsOffice = 'www.hawaii.edu/its';
 
     return (
-        <Accordion data-testid="contact-accordion">
+        <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="For General Help/How-To Questions">
                 <AccordionTrigger>For General Help/How-To Questions</AccordionTrigger>
                 <AccordionContent>
