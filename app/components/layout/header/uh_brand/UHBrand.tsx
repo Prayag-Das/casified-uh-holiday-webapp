@@ -6,7 +6,7 @@ import Link from 'next/link';
 function Logo() {
     return (
         <Link
-            className="font-cinzel-decorative-bold font-medium no-underline text-light-dark-7-0" href="/">
+            className="uhBrand" href="/">
             <Image
                 src="/holiday/seal.svg"
                 width={50}
