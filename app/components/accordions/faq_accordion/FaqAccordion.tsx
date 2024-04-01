@@ -23,30 +23,30 @@ const FaqAccordion = () => {
     const springBootGuide = 'https://docs.spring.io/spring-boot/docs/2.6.2/reference/htmlsingle/';
 
     return (
-        <Accordion type="single" collapsible className="w-full">
-            <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">General Questions</h3>
-            <AccordionItem value="Who can answer some basic questions about the application?">
+        <Accordion type="single" collapsible className="w-full p-20">
+            <h2 className="categoryText">General Questions</h2>
+            <AccordionItem value="item-1">
                 <AccordionTrigger>Who can answer some basic questions about the application?</AccordionTrigger>
                 <AccordionContent>
             Send an email to <a href={`mailto:${email}`}>ITS Web Developers.</a>
                 </AccordionContent>
             </AccordionItem>
 
-            <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">Resources</h3>
-            <AccordionItem value="Can I get the source code for this project?">
+            <h4 className="categoryText">Resources</h4>
+            <AccordionItem value="item-2">
                 <AccordionTrigger>Can I get the source code for this project?</AccordionTrigger>
                 <AccordionContent>
             Sure thing. It is available at this
                     <a href={githubRepo} target="_github_repo"> github repository.</a>
                 </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="Can I contribute coding modifications to this project?">
+            <AccordionItem value="item-3">
                 <AccordionTrigger>Can I contribute coding modifications to this project?</AccordionTrigger>
                 <AccordionContent>
             Yes! See the github repository mentioned above.
                 </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="How are the dates determined?">
+            <AccordionItem value="item-4">
                 <AccordionTrigger>How are the dates determined?</AccordionTrigger>
                 <AccordionContent>
             By state statute. <br/>
@@ -56,16 +56,16 @@ const FaqAccordion = () => {
                     <a href={observanceHolidays} target="_observance_holidays"> Observance of holidays</a>.
                 </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="Does the state produce a holiday list?">
+            <AccordionItem value="item-5">
                 <AccordionTrigger>Does the state produce a holiday list?</AccordionTrigger>
                 <AccordionContent>
-            A: Yes, it does. See
+            Yes, it does. See
                     <a href={stateObservedHolidays} target="_state_observed_holidays"> State Observed Holidays</a>.
                 </AccordionContent>
             </AccordionItem>
 
-            <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">Technologies</h3>
-            <AccordionItem value="What did you use to create the site?">
+            <h3 className="categoryText">Technologies</h3>
+            <AccordionItem value="item-6">
                 <AccordionTrigger>What did you use to create the site?</AccordionTrigger>
                 <AccordionContent>
             Apache Maven <br/>

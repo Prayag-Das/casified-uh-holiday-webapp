@@ -87,4 +87,22 @@
   .uhBrand {
     font-family: cinzel-decorative-bold;
   }
+
+  .uhText {
+    font-family: font-cinzel-regular;
+  }
+
+  .uhTextOf {
+    font-family: font-cormorant-upright-regular;
+  }
+
+  .pageTitle {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .categoryText {
+    font-size: larger;
+    font-weight: bold;
+  }
 }

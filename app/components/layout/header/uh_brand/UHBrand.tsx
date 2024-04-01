@@ -6,14 +6,14 @@ import Link from 'next/link';
 function Logo() {
     return (
         <Link
-            className="uhBrand" href="/">
+            className="flex justify-between items-center space-x-2" href="/">
             <Image
                 src="/holiday/seal.svg"
                 width={50}
                 height={50}
                 alt="logo"
                 role="img"/>
-            <Label>
+            <Label className={"uhBrand"}>
               UH Holidays
             </Label>
         </Link>
