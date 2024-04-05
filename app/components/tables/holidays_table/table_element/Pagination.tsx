@@ -29,7 +29,7 @@ const Pagination = ({ tableInstance }: PaginationProps) => {
             <button
                 key={i}
                 style={buttonStyle}
-                className={`border-b ring-1 ring-light-dark-3-4 px-3.5 ${
+                className={`border-b  ring-light-dark-3-4 px-3.5 ${
                     activePage === i ? 'bg-green-200 hover:bg-green-200 text-black' : 'hover:bg-light-dark-3-4'
                 }`}
                 onClick={() => {
