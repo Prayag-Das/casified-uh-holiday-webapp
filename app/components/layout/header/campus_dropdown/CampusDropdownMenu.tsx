@@ -9,9 +9,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-/*
-import { IconChevronDown } from '@tabler/icons-react';
-*/
 import React from "react";
 import {
     NavigationMenu, 
@@ -24,7 +21,7 @@ const CampusDropdownMenu = () => (
     <NavigationMenu>
         <NavigationMenuList>
             <DropdownMenu>
-                <DropdownMenuTrigger >
+                <DropdownMenuTrigger>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Campuses
                     </NavigationMenuLink>

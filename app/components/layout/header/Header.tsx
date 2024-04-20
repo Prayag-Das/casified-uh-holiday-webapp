@@ -5,7 +5,7 @@ import ColorSchemeToggle from './color_scheme_toggle/ColorSchemeToggle';
 /*import HamburgerMenu from './hamburger_menu/HamburgerMenu';*/
 import UHBrand from './uh_brand/UHBrand';
 import Menu from "@/components/layout/header/header_menu/HeaderMenu";
-import AuthMenu from "@/components/layout/header/header_menu/HeaderMenuAuth";
+import AuthMenuZ from "@/components/layout/header/header_menu/HeaderMenuAuthZ";
 
 const Header = async () => {
     const currentUser = await getCurrentUser();
@@ -19,7 +19,7 @@ const Header = async () => {
                     <div className="hidden sm:flex space-x-1" data-testid="header-links">
                         <Menu/>
                         {currentUser && currentUser.roles.includes(Role.UH) && (
-                            <AuthMenu/>
+                            <AuthMenuZ/>
                         )}
                         <LoginButton currentUser={currentUser} />
                         <ColorSchemeToggle />

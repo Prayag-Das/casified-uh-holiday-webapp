@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import Link from 'next/link';
 
-const AuthMenu = () => {
+const AuthMenuZ = () => {
 
     return (
         <NavigationMenu>
@@ -26,4 +26,4 @@ const AuthMenu = () => {
     );
 }
 
-export default AuthMenu;
+export default AuthMenuZ;
