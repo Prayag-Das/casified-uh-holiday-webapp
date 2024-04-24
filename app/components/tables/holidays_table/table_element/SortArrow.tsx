@@ -7,7 +7,7 @@ interface sortArrowProps {
 }
 
 const SortArrow = ({sortDirection}: sortArrowProps) => (
-    <>
+    <a>
         {sortDirection === 'asc' ? (
             <IconSortAscending />
         ) : sortDirection === 'desc' ? (
@@ -15,7 +15,7 @@ const SortArrow = ({sortDirection}: sortArrowProps) => (
         ) : (
             <IconArrowsSort />
         )}
-    </>
+    </a>
 )
 
 export default SortArrow;

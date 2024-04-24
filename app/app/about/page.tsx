@@ -6,9 +6,6 @@ const AboutPage = () => {
         <Container fluid>
             <Row>
                 <Col xs={{ span: 10, offset: 1 }}>
-                    <h3 className="pageTitle p-5">
-                      Frequently Asked Questions
-                    </h3>
                     <FaqAccordion />
                 </Col>
             </Row>

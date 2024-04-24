@@ -3,7 +3,6 @@ import LoginButton from '@/components/layout/header/login_button/LoginButton';
 import Role from '@/access/Role';
 import ColorSchemeToggle from '@/components/layout/header/color_scheme_toggle/ColorSchemeToggle';
 import CampusDropdownMenu from '@/components/layout/header/campus_dropdown/CampusDropdownMenu';
-import HamburgerMenu from '@/components/layout/header/hamburger_menu/HamburgerMenu';
 import UHBrand from '@/components/layout/header/uh_brand/UHBrand';
 import Link from 'next/link';
 import { anonymousUser } from '@/access/User';
@@ -30,8 +29,6 @@ const MockHeader = () => {
                         <LoginButton currentUser={currentUser} />
                         <ColorSchemeToggle />
                     </Group>
-
-                    <HamburgerMenu currentUser={currentUser} />
                 </Group>
             </Container>
         </header>
