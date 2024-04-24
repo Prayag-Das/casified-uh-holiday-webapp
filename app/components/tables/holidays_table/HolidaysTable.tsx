@@ -4,12 +4,13 @@ import {
     Table,
     TableBody,
     TableCaption,
-    TableCell,
-    TableFooter,
+    /*    TableCell,
+    TableFooter,*/
     TableHead,
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+/*
 import {
     Dialog,
     DialogContent,
@@ -19,6 +20,7 @@ import {
     DialogTrigger,
 } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
+*/
 import {
     useReactTable,
     flexRender,
@@ -80,7 +82,7 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                                     className="px-2 py-2.5"
                                     style={{ minWidth: '400px' }}
                                 >
-                                    <div className="header-content">
+                                    <div className="header-content flex items-center">
                                         {header.isPlaceholder ? null :
                                             flexRender(header.column.columnDef.header, header.getContext())}
                                         <SortArrow sortDirection={header.column.getIsSorted()} />
@@ -92,47 +94,52 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                 </TableHeader>
                 <TableBody>
                     {tableInstance.getRowModel().rows.map((row, index: number) => (
-                        <Dialog>
-                            <DialogTrigger asChild>
-                                <tr
-                                    className={`${
-                                        index % 2 === 0
-                                            ? 'bg-top'
-                                            : 'bg-transparent'
-                                    } border-b border-off-white`}
-                                    key={row.id}
-                                >
-                                    {row.getVisibleCells().map((cell) => (
+                        <tr
+                            className={`${
+                                index % 2 === 0
+                                    ? 'bg-top'
+                                    : 'bg-transparent'
+                            } border-b border-off-white`}
+                            key={row.id}
+                        >
+                            {row.getVisibleCells().map((cell) => (
+                                <td key={cell.id} className="p-2">
+                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                </td>
+                                /*<Dialog>
+                                    <DialogTrigger asChild>
                                         <td key={cell.id} className="p-2">
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                         </td>
-                                    ))}
-                                </tr>
-                            </DialogTrigger>
-                            <DialogContent className="sm:max-w-[425px]">
-                                <DialogHeader>
-                                    <DialogTitle key={row.id}>Holiday: {row.id}</DialogTitle>
-                                </DialogHeader>
-                                <div className="grid gap-4 py-4">
-                                    <div className="grid grid-cols-4 items-center gap-4">
-                                        <Label htmlFor="observed" className="text-right">
-                                  Observed:
-                                        </Label>
-                                        <DialogDescription id="observed">
-                                            test
-                                        </DialogDescription>
-                                    </div>
-                                    <div className="grid grid-cols-4 items-center gap-4">
-                                        <Label htmlFor="official" className="text-right">
-                                Official:
-                                        </Label>
-                                        <DialogDescription id="official">
-                                            test
-                                        </DialogDescription>
-                                    </div>
-                                </div>
-                            </DialogContent>
-                        </Dialog>
+                                    </DialogTrigger>
+                                    <DialogContent className="sm:max-w-[425px]">
+                                        <DialogHeader>
+                                            <DialogTitle key={cell.id}><a>Holiday:</a>
+                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                            </DialogTitle>
+                                        </DialogHeader>
+                                        <div className="grid gap-4 py-4">
+                                            <div className="grid grid-cols-4 items-center gap-4">
+                                                <Label htmlFor="observed" className="text-right">
+                                        Observed:
+                                                </Label>
+                                                <DialogDescription id="observed">
+                                        test
+                                                </DialogDescription>
+                                            </div>
+                                            <div className="grid grid-cols-4 items-center gap-4">
+                                                <Label htmlFor="official" className="text-right">
+                                        Official:
+                                                </Label>
+                                                <DialogDescription id="official">
+                                        test
+                                                </DialogDescription>
+                                            </div>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>*/
+                            ))}
+                        </tr>
                     ))}
                 </TableBody>
             </Table>
