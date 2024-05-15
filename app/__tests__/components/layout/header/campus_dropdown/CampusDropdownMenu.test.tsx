@@ -1,6 +1,5 @@
-import { screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import CampusDropdownMenu from '@/components/layout/header/campus_dropdown/CampusDropdownMenu';
-import { renderWithProviders } from 'jest.setup';
 
 describe('CampusDropdownMenu', () => {
     const campuses = {
@@ -17,7 +16,7 @@ describe('CampusDropdownMenu', () => {
     };
 
     it('should render the dropdown button with the menu closed on load', () => {
-        renderWithProviders(<CampusDropdownMenu />);
+        render(<CampusDropdownMenu />);
 
         expect(screen.getByRole('button', { name: 'Campuses' })).toBeInTheDocument();
         expect(screen.queryByRole('menu', { name: 'Campuses' })).not.toBeInTheDocument();
@@ -27,7 +26,7 @@ describe('CampusDropdownMenu', () => {
     });
 
     it('should open and close dropdown menu on click', () => {
-        renderWithProviders(<CampusDropdownMenu />);
+        render(<CampusDropdownMenu />);
 
         // Open dropdown menu
         fireEvent.click(screen.getByRole('button', { name: 'Campuses' }));
@@ -45,7 +44,7 @@ describe('CampusDropdownMenu', () => {
     });
 
     it('should open the campus website in a new tab when clicked', () => {
-        renderWithProviders(<CampusDropdownMenu />);
+        render(<CampusDropdownMenu />);
         
         fireEvent.click(screen.getByRole('button', { name: 'Campuses' }));
         for (const [key, value] of Object.entries(campuses)) {
