@@ -13,6 +13,7 @@ describe('Login', () => {
     describe('User is not logged in', () => {
 
         beforeEach(() => {
+            // eslint-disable-next-line testing-library/no-render-in-lifecycle
             render(<Login currentUser={anonymousUser} />);
         });
 
@@ -32,6 +33,7 @@ describe('Login', () => {
 
         beforeEach(() => {
             testUser.roles.push(Role.UH);
+            // eslint-disable-next-line testing-library/no-render-in-lifecycle
             render(<Login currentUser={testUser} />);
         });
 

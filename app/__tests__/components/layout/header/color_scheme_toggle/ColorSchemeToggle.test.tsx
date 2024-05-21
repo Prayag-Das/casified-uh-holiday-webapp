@@ -1,6 +1,6 @@
 import ColorSchemeToggle from '@/components/layout/header/color_scheme_toggle/ColorSchemeToggle';
 //import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes"
-import { render, renderHook, screen, fireEvent } from '@testing-library/react';
+import { render, screen, /*fireEvent, renderHook*/ } from '@testing-library/react';
 
 describe('ColorSchemeToggle', () => {
 

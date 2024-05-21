@@ -3,7 +3,6 @@ import Login from '@/components/layout/header/login_button/LoginButton';
 import { redirect } from 'next/navigation';
 import User, { anonymousUser } from '@/access/User';
 import Role from '@/access/Role';
-//import { renderWithProviders } from 'jest.setup';
 
 const casUrl = process.env.NEXT_PUBLIC_CAS_URL as string;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;

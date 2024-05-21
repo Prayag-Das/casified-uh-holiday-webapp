@@ -11,6 +11,7 @@ jest.mock('@/access/AuthenticationService');
 describe ('Menubar', () => {
 
     beforeEach(async () => {
+        // eslint-disable-next-line testing-library/no-render-in-lifecycle
         render(await Menubar());
     });
 

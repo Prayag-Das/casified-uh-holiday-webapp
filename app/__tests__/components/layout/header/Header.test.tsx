@@ -3,7 +3,6 @@ import Header from '@/components/layout/header/Header';
 import User, { anonymousUser } from '@/access/User';
 import * as AuthenticationService from '@/access/AuthenticationService';
 import Role from '@/access/Role';
-import { renderWithProviders } from 'jest.setup';
 
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
 
