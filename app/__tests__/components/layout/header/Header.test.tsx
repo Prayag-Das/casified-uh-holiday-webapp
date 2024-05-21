@@ -53,13 +53,6 @@ describe ('Header', () => {
             expect(screen.getByRole('button', { name: 'Toggle theme' })).toBeInTheDocument();
         });
 
-        /*    it('should collapse the header links when the screen width is too small', async () => {
-            render(await Header());
-
-            expect(screen.getByTestId('header-links')).toHaveClass('mantine-visible-from-sm');
-            expect(screen.getByRole('button', { name: 'Open the menu' })).toHaveClass('mantine-hidden-from-sm');
-        });*/
-
     });
     
 });
