@@ -23,69 +23,73 @@ const FaqAccordion = () => {
     const springBootGuide = 'https://docs.spring.io/spring-boot/docs/2.6.2/reference/htmlsingle/';
 
     return (
-        <Accordion type="single" collapsible className="w-full p-20">
-            <h3 className="pageTitle">
-          Frequently Asked Questions
-            </h3>
-            <div className={"p-5"}></div>
-            <h2 className="categoryText">General Questions</h2>
-            <AccordionItem value="item-1">
-                <AccordionTrigger>Who can answer some basic questions about the application?</AccordionTrigger>
-                <AccordionContent>
-            Send an email to <a href={`mailto:${email}`}>ITS Web Developers.</a>
-                </AccordionContent>
-            </AccordionItem>
+        <Accordion type="single" collapsible className="w-full p-24">
+            <div className="px-48">
+                <h3 className="pageTitle">
+              Frequently Asked Questions
+                </h3>
+                <div className={"p-5"}/>
+                <h2 className="categoryText">General Questions</h2>
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>
+                Who can answer some basic questions about the application?
+                    </AccordionTrigger>
+                    <AccordionContent>
+                Send an email to <a href={`mailto:${email}`}>ITS Web Developers.</a>
+                    </AccordionContent>
+                </AccordionItem>
 
-            <h4 className="categoryText">Resources</h4>
-            <AccordionItem value="item-2">
-                <AccordionTrigger>Can I get the source code for this project?</AccordionTrigger>
-                <AccordionContent>
-            Sure thing. It is available at this
-                    <a href={githubRepo} target="_github_repo"> github repository.</a>
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-                <AccordionTrigger>Can I contribute coding modifications to this project?</AccordionTrigger>
-                <AccordionContent>
-            Yes! See the github repository mentioned above.
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-                <AccordionTrigger>How are the dates determined?</AccordionTrigger>
-                <AccordionContent>
-            By state statute. <br/>
-            You take this state document:
-                    <a href={holidaysDesignated} target="_holidays_designated"> Holidays designated</a>,
-            then combine it with this other state document:
-                    <a href={observanceHolidays} target="_observance_holidays"> Observance of holidays</a>.
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-5">
-                <AccordionTrigger>Does the state produce a holiday list?</AccordionTrigger>
-                <AccordionContent>
-            Yes, it does. See
-                    <a href={stateObservedHolidays} target="_state_observed_holidays"> State Observed Holidays</a>.
-                </AccordionContent>
-            </AccordionItem>
+                <h4 className="categoryText">Resources</h4>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>Can I get the source code for this project?</AccordionTrigger>
+                    <AccordionContent>
+                Sure thing. It is available at this
+                        <a href={githubRepo} target="_github_repo"> github repository.</a>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>Can I contribute coding modifications to this project?</AccordionTrigger>
+                    <AccordionContent>
+                Yes! See the github repository mentioned above.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                    <AccordionTrigger>How are the dates determined?</AccordionTrigger>
+                    <AccordionContent>
+                By state statute. <br/>
+                You take this state document:
+                        <a href={holidaysDesignated} target="_holidays_designated"> Holidays designated</a>,
+                then combine it with this other state document:
+                        <a href={observanceHolidays} target="_observance_holidays"> Observance of holidays</a>.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                    <AccordionTrigger>Does the state produce a holiday list?</AccordionTrigger>
+                    <AccordionContent>
+                Yes, it does. See
+                        <a href={stateObservedHolidays} target="_state_observed_holidays"> State Observed Holidays</a>.
+                    </AccordionContent>
+                </AccordionItem>
 
-            <h3 className="categoryText">Technologies</h3>
-            <AccordionItem value="item-6">
-                <AccordionTrigger>What did you use to create the site?</AccordionTrigger>
-                <AccordionContent>
-            Apache Maven <br/>
-            Apache Tomcat <br/>
-            Java 17 <br/>
-            Spring Framework
-                    <a href={springFrameworkGuide} target="_spring_framework_guide"> (Guide)</a>
-                    <a href={springFrameworkAPI} target="_spring_framework_api"> (API)</a> <br/>
-            Spring Boot
-                    <a href={springBootGuide} target="_spring_boot_guide"> (Guide)</a> <br/>
-            React.js <br/>
-            Next.js <br/>
-            Tailwind CSS <br/>
-            shadcn/ui
-                </AccordionContent>
-            </AccordionItem>
+                <h3 className="categoryText">Technologies</h3>
+                <AccordionItem value="item-6">
+                    <AccordionTrigger>What did you use to create the site?</AccordionTrigger>
+                    <AccordionContent>
+                Apache Maven <br/>
+                Apache Tomcat <br/>
+                Java 17 <br/>
+                Spring Framework
+                        <a href={springFrameworkGuide} target="_spring_framework_guide"> (Guide)</a>
+                        <a href={springFrameworkAPI} target="_spring_framework_api"> (API)</a> <br/>
+                Spring Boot
+                        <a href={springBootGuide} target="_spring_boot_guide"> (Guide)</a> <br/>
+                React.js <br/>
+                Next.js <br/>
+                Tailwind CSS <br/>
+                shadcn/ui
+                    </AccordionContent>
+                </AccordionItem>
+            </div>
         </Accordion>
     );
 }

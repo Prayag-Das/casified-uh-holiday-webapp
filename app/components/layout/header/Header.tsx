@@ -21,7 +21,7 @@ const Header = async () => {
                             <AuthMenuZ/>
                         )}
                         <LoginButton currentUser={currentUser}/>
-                        <div className="px-10">
+                        <div className="px-4">
                             <ColorSchemeToggle/>
                         </div>
                     </div>

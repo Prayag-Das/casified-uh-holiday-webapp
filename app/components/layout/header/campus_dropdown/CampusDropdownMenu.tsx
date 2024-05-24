@@ -30,7 +30,7 @@ const CampusDropdownMenu = () => (
                     <DropdownMenuLabel data-testid="uniLabel">Universities</DropdownMenuLabel>
                     <DropdownMenuGroup>
                         <DropdownMenuItem>
-                            <link href="https://www.hilo.hawaii.edu/">Hilo</link>
+                            <a href="https://www.hilo.hawaii.edu/" role="link">Hilo</a>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <a href="https://www.manoa.hawaii.edu/" role="link">Manoa</a>
