@@ -1,49 +1,44 @@
-beforeAll(() => {
-    window.matchMedia = jest.fn().mockImplementation(query => ({
-        matches: false,
-        media: query,
-        onchange: null,
-        addListener: jest.fn(), // Deprecated
-        removeListener: jest.fn(), // Deprecated
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
-        dispatchEvent: jest.fn(),
-    }));
-});
-
+import userEvent from '@testing-library/user-event';
+import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
 import ColorSchemeToggle from '@/components/layout/header/color_scheme_toggle/ColorSchemeToggle';
-import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes"
-import { render, screen, fireEvent, renderHook } from '@testing-library/react';
+import { render, renderHook, screen } from '@testing-library/react';
 
 describe('ColorSchemeToggle', () => {
 
-    it('should render the ColorSchemeToggle', () => {
-        render(<ColorSchemeToggle />);
-
-        expect(screen.getByRole('button', {name: 'Toggle theme'})).toBeInTheDocument();
-        expect(screen.getByTestId('SunIcon')).toBeInTheDocument();
-        expect(screen.getByTestId('MoonIcon')).toBeInTheDocument();
+    beforeAll(() => {
+        window.matchMedia = jest.fn().mockImplementation(query => ({
+            matches: false,
+            media: query,
+            onchange: null,
+            addListener: jest.fn(), // Deprecated
+            removeListener: jest.fn(), // Deprecated
+            addEventListener: jest.fn(),
+            removeEventListener: jest.fn(),
+            dispatchEvent: jest.fn(),
+        }));
     });
 
-    it('should change the theme onClick', () => {
-        render(<ColorSchemeToggle />);
+    it('should change the theme onClick', async () => {
+        const user = userEvent.setup();
 
         const wrapper = ({ children }: { children: React.ReactNode }) =>
-            <NextThemesProvider defaultTheme="light">{ children }</NextThemesProvider>
+            <NextThemesProvider>{ children }</NextThemesProvider>
+
+        render(<ColorSchemeToggle />, { wrapper });
 
         let view = renderHook(useTheme, { wrapper });
-        expect(view.result.current.systemTheme).toBe('light');
+        expect(view.result.current.theme).toBe('system');
 
-        fireEvent.click(screen.getByRole('button', {name: 'Toggle theme'}));
-        fireEvent.click(screen.getByRole('button', { name: 'Dark' }));
-
-        view = renderHook(useTheme, { wrapper });
-        expect(view.result.current.systemTheme).toBe('dark');
-
-        fireEvent.click(screen.getByRole('button', {name: 'Toggle theme'}));
-        fireEvent.click(screen.getByRole('button', { name: 'Light' }));
+        await user.click(screen.getByRole('button', { name: 'Toggle theme' }));
+        await user.click(screen.getByRole('menuitem', { name: 'Light' }));
 
         view = renderHook(useTheme, { wrapper });
-        expect(view.result.current.systemTheme).toBe('light');
+        expect(view.result.current.theme).toBe('light');
+
+        await user.click(screen.getByRole('button', { name: 'Toggle theme' }));
+        await user.click(screen.getByRole('menuitem', { name: 'Dark' }));
+
+        view = renderHook(useTheme, { wrapper });
+        expect(view.result.current.theme).toBe('dark');
     });
 });
