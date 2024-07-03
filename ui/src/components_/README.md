@@ -1,5 +1,4 @@
 # What's in here?
-
 The 'components_' folder contains
 the building blocks of our pages.
 Rather than writing all our visual
@@ -19,7 +18,6 @@ and components with various
 usages, are kept in this folder.
 
 ## Atomic Components
-
 Atomic components do not
 contain any subcomponents.
 Many of the components we will
@@ -28,7 +26,6 @@ components that are both
 imported and written by us.
 
 ## Additional Resources
-
 Codevolution has a wonderful
 video with specifics on how
 components work in web applications:

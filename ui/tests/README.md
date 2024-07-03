@@ -1,5 +1,4 @@
 # What's in here?
-
 In the 'tests' folder, we store
 test classes for our app's various
 components and pages, which can be found in the
@@ -12,7 +11,6 @@ to the codebase do not introduce
 new bugs or issues.
 
 ## Additional Resources
-
 We primarily use JEST, a
 Javascript testing framework,
 which you can learn more about
