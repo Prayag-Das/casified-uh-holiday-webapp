@@ -8,6 +8,7 @@ tool for writing, running, and debugging
 tests for modern web applications.
 
 ## Cypress Features
+
 - End-to-End Testing: Cypress allows
 you to test the entire application
 workflow from start to finish.

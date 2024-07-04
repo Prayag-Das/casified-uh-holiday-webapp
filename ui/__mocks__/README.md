@@ -11,6 +11,7 @@ for testing, making it easier to
 identify and fix issues.
 
 ## Purpose of Mocks
+
 - Isolation: Mocks isolate the unit
 of code being tested from its dependencies,
 ensuring that tests focus only on the component or function under test.
