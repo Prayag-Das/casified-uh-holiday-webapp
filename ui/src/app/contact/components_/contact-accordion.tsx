@@ -5,7 +5,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "../../../components_/ui/accordion"
+} from "@/src/components/ui/accordion"
 
 const ContactAccordion = () => {
     const email = 'duckart@hawaii.edu';
